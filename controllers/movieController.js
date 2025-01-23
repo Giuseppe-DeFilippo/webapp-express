@@ -18,7 +18,7 @@ function index(req, res) {
         }
         res.json({
             conteggio: results.length,
-            post: results
+            film: results
         });
     });
 }

@@ -2,8 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
-const bookRouter = require("./routers/bookRouter")
-// const bookRouter = require("./routers/bookRouter");
+const bookRouter = require("./routers/movieRouter")
 const PORT = process.env.port || 3000;
 
 //middleware

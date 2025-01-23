@@ -1,4 +1,14 @@
 const connection = require("../connection");
+
+const uploadImage = (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ error: "Nessun file caricato" });
+    }
+    const imagePath = `uploads/${req.file.filename}`;
+    const sql = "INSERT INTO movies (image) VALUES (?)";
+}
+
+
 function index(req, res) {
     const sql = "SELECT * FROM `movies`";
     connection.query(sql, (err, results) => {

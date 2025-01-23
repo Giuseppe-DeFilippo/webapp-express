@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
+const bookRouter = require("./routers/bookRouter")
 // const bookRouter = require("./routers/bookRouter");
 const PORT = process.env.port || 3000;
 
@@ -15,7 +16,7 @@ app.get("/", (req, res) => {
     console.log('dsa');
     res.send('Hello World!')
 });
-// app.use("/api/post", postRouter);
+app.use("/api/movie", bookRouter);
 
 app.listen(PORT, () => {
     console.log(`Server in esecuzione su http://localhost:${PORT}`);

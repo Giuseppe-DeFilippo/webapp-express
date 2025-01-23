@@ -31,7 +31,7 @@ function show(req, res) {
         if (!item) {
             return res.status(404).json({ error: "errore non ce" })
         }
-        const sqlReviews = "SELECT*FROM `reviews` WHERE `movie_id` = ?"
+        const sqlReviews = "SELECT * FROM `reviews` WHERE `movie_id` = ?"
         connection.query(sqlReviews, [id], (err, reviewResults) => {
             if (err) return res.status(500).json({ error: "errore query failed review" });
             item.reviews = reviewResults;

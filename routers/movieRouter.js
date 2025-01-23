@@ -4,14 +4,14 @@ const { index, show, create, update, canc, tagSearch } = require("../controllers
 const router = express.Router();
 
 
-const storage = multer.diskStorage({
-    destination: "uploads/",
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + "-" + file.originalname);
-    },
-});
+// const storage = multer.diskStorage({
+//     destination: "uploads/",
+//     filename: (req, file, cb) => {
+//         cb(null, Date.now() + "-" + file.originalname);
+//     },
+// });
 
-const upload = multer({ Storage });
+// const upload = multer({ Storage });
 
 
 //rotte
@@ -22,7 +22,7 @@ router.get("/", index);
 router.get("/:id", show);
 
 //img
-router.post("/upload", upload.single("image"), uploadImage);
+// router.post("/upload", upload.single("image"), uploadImage);
 
 
 //create
